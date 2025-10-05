@@ -1,0 +1,12 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Required: defines the runner environment
+    steps:
+      - name: Print greeting
+        run: echo "Hello, world!"
