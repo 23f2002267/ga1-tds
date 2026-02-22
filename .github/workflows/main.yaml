@@ -1,12 +1,20 @@
-name: CI Pipeline
+name: Basic CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Required: defines the runner environment
+    runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: 23f2002267@ds.study.iitm.ac.in
         run: echo "Hello, world!"
+
+      - name: Confirm execution
+        run: echo "Workflow executed successfully"
